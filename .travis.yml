@@ -1,8 +1,8 @@
 language: java
 #install: ant deps
 
-jdk:
-  - oraclejdk8
+#jdk:
+ # - oraclejdk8
 
 script: ant compile.module.fibonaccifolge.tests
 

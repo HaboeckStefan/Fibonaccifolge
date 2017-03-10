@@ -7,10 +7,8 @@ language: java
 jdk:
   - oraclejdk8
 
-script: 
--javac fibonaccifolgeTest
--java fibonaccifolgeTest
+script: ant test
 
 
-before_install:
- - cd java
+#before_install:
+# - cd java

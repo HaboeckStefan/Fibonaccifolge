@@ -1,10 +1,14 @@
-ant test
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 language: java
-install: ant deps
 
 jdk:
   - oraclejdk8
-  
-before_install:
-  - cd java
+
+script: ant test
+
+
+#before_install:
+# - cd java

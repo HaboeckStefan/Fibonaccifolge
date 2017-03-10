@@ -4,7 +4,7 @@ language: java
 jdk:
   - oraclejdk8
 
-script: ant fibonaccifolge
+script: ant compile.module.fibonaccifolge.tests
 
 
 #before_install:

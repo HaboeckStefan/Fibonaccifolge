@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_fibonaccifolge" default="compile.module.fibonaccifolge">
+  <dirname property="module.fibonaccifolge.basedir" file="${ant.file.module_fibonaccifolge}"/>
+  
+  <property name="module.jdk.home.fibonaccifolge" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.fibonaccifolge" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.fibonaccifolge" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.fibonaccifolge" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="fibonaccifolge.output.dir" value="${module.fibonaccifolge.basedir}/out/production/Fibonaccifolge"/>
+  <property name="fibonaccifolge.testoutput.dir" value="${module.fibonaccifolge.basedir}/out/test/Fibonaccifolge"/>
+  
+  <path id="fibonaccifolge.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="fibonaccifolge.module.production.classpath">
+    <path refid="${module.jdk.classpath.fibonaccifolge}"/>
+    <pathelement location="${idea.home}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="fibonaccifolge.runtime.production.module.classpath">
+    <pathelement location="${fibonaccifolge.output.dir}"/>
+    <pathelement location="${idea.home}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="fibonaccifolge.module.classpath">
+    <path refid="${module.jdk.classpath.fibonaccifolge}"/>
+    <pathelement location="${fibonaccifolge.output.dir}"/>
+    <pathelement location="${idea.home}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  <path id="fibonaccifolge.runtime.module.classpath">
+    <pathelement location="${fibonaccifolge.testoutput.dir}"/>
+    <pathelement location="${fibonaccifolge.output.dir}"/>
+    <pathelement location="${idea.home}/lib/hamcrest-core-1.3.jar"/>
+    <pathelement location="${idea.home}/lib/junit-4.12.jar"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.fibonaccifolge">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.fibonaccifolge">
+    <patternset refid="excluded.from.module.fibonaccifolge"/>
+  </patternset>
+  
+  <path id="fibonaccifolge.module.sourcepath">
+    <dirset dir="${module.fibonaccifolge.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.fibonaccifolge" depends="compile.module.fibonaccifolge.production,compile.module.fibonaccifolge.tests" description="Compile module Fibonaccifolge"/>
+  
+  <target name="compile.module.fibonaccifolge.production" depends="register.custom.compilers" description="Compile module Fibonaccifolge; production classes">
+    <mkdir dir="${fibonaccifolge.output.dir}"/>
+    <javac2 destdir="${fibonaccifolge.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.fibonaccifolge}/javac">
+      <compilerarg line="${compiler.args.fibonaccifolge}"/>
+      <bootclasspath refid="fibonaccifolge.module.bootclasspath"/>
+      <classpath refid="fibonaccifolge.module.production.classpath"/>
+      <src refid="fibonaccifolge.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.fibonaccifolge"/>
+    </javac2>
+    
+    <copy todir="${fibonaccifolge.output.dir}">
+      <fileset dir="${module.fibonaccifolge.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.fibonaccifolge.tests" depends="register.custom.compilers,compile.module.fibonaccifolge.production" description="compile module Fibonaccifolge; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.fibonaccifolge" description="cleanup module">
+    <delete dir="${fibonaccifolge.output.dir}"/>
+    <delete dir="${fibonaccifolge.testoutput.dir}"/>
+  </target>
+</project>

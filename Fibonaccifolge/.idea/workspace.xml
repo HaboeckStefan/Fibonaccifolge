@@ -66,8 +66,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/fibonaccifolgeTest.java" />
         <option value="$PROJECT_DIR$/src/fibonaccifolge.java" />
+        <option value="$PROJECT_DIR$/src/fibonaccifolgeTest.java" />
       </list>
     </option>
   </component>
@@ -159,7 +159,7 @@
     <property name="GenerateAntBuildDialog.enableUiFormCompile" value="true" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="fibonaccifolge" />
+    <property name="GenerateAntBuildDialog.outputFileNameProperty" value="build" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -647,7 +647,7 @@
       <workItem from="1488552299211" duration="774000" />
       <workItem from="1488731658262" duration="947000" />
       <workItem from="1488783524681" duration="57000" />
-      <workItem from="1489149336509" duration="3369000" />
+      <workItem from="1489149336509" duration="3636000" />
     </task>
     <servers />
   </component>
@@ -660,7 +660,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5147000" />
+    <option name="totallyTimeSpent" value="5414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="953" y="0" width="974" height="1047" extended-state="0" />

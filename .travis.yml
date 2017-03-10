@@ -4,13 +4,13 @@ import org.testng.annotations.Test;
 
 language: java
 
-#jdk:
-#  - oraclejdk8
+jdk:
+  - oraclejdk8
 
 script: 
 -javac fibonaccifolgeTest
 -java fibonaccifolgeTest
 
 
-#before_install:
-# - cd java
+before_install:
+ - cd java

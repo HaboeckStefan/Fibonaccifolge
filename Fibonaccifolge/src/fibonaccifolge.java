@@ -9,10 +9,10 @@ public class fibonaccifolge {
         int number1 = 1;
         int number2 = 1;
 
-
-        calkulatefibonaccifolge(number1,number2);
+        calculatefibonaccifolge(number1,number2);
     }
-    public static void calkulatefibonaccifolge(int number1,int number2){
+
+    public static void calculatefibonaccifolge(int number1,int number2){
 
         int result = 0;
         //Calculate next fibonacci number
@@ -25,7 +25,7 @@ public class fibonaccifolge {
         System.out.println("Zahl1: "+number1+" Zahl2: "+number2+"\n");
 
         if(number1 < 10000)
-        calkulatefibonaccifolge(number1,number2);
+        calculatefibonaccifolge(number1,number2);
         else
             System.out.println("Exit");
     }

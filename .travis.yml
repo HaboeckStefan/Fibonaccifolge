@@ -8,8 +8,6 @@ language: java
 #  - oraclejdk8
 
 script: ant test
- -javac fibonaccifolgeTest
- -java fibonaccifolge
 
 
 #before_install:
